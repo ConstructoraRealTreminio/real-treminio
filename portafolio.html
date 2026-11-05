@@ -1,249 +1,193 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Our Projects, ​Engineering, Procurement and Construction Projects Around the World, Get in touch">
-    <meta name="description" content="">
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Portafolio.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 8.6.15, nicepage.com">
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Out of Service</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
-<link rel="icon" type="image/png" href="favicon/favicon.png">
+    /* Fondo decorativo de malla */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
 
+    /* Contenedor del mensaje central */
+    .message-container {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2.5rem;
+      max-width: 600px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(239, 68, 68, 0.1);
+    }
 
+    .warning-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
 
-<a href="index.html" style="position: fixed; top: 35px; left: 25px; z-index: 9999; color: white; background: rgba(0,0,0,0.6); padding: 12px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.3);" title="Ir al inicio">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-</a>
-    
-       
-    
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800">
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
-}</script>
-    <meta name="theme-color" content="#1b356a">
-    <meta property="og:title" content="Portafolio">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-clearfix u-gradient u-header u-header" id="sec-cede"><div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1">
-        
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f87171;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+    }
 
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #94a3b8;
+      font-weight: 400;
+    }
 
+    /* Animación de la Lupa */
+    .magnifier-track {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+    }
 
+    .magnifier {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140px;
+      height: 140px;
+      margin-top: -70px;
+      margin-left: -70px;
+      animation: searchAnimation 10s infinite ease-in-out;
+    }
 
-        <div style="text-align: center; width: 100%; margin: 10px 0;">
-  <span style="color: white !important; font-style: italic; font-size: 16px;">Diseño construcción y remodelación residencial y comercial</span>
-</div>
+    .glass {
+      width: 100px;
+      height: 100px;
+      border: 8px solid #38bdf8;
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0.02) 70%);
+      box-shadow: 
+        0 0 20px rgba(56, 189, 248, 0.4),
+        inset 0 0 15px rgba(56, 189, 248, 0.3);
+      backdrop-filter: blur(2px);
+    }
 
+    /* Brillo en el cristal de la lupa */
+    .glass::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      width: 30px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      transform: rotate(-40deg);
+    }
 
+    .handle {
+      position: absolute;
+      top: 82px;
+      left: 82px;
+      width: 16px;
+      height: 65px;
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      border-radius: 8px;
+      transform: rotate(-45deg);
+      transform-origin: top left;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
 
-        <div class="u-align-center u-border-1 u-border-grey-15 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-      </div></header> 
-    <section class="u-clearfix u-shading u-section-1" id="block-2">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1">
-        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-center u-container-align-center u-container-style u-layout-cell u-size-28 u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
-                <div class="u-container-layout u-container-layout-1">
-                  <div class="u-color-var u-shape u-shape-circle u-shape-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="" data-animation-delay="500"></div>
-                  <h3 class="u-text u-text-white u-text-1"> Constructora Real Treminio a ofrecido sus servicios al pasar de los años ofreciendo calidad y durabilidad</h3>
-                  <img class="u-image u-image-circle u-image-contain u-image-1" src="images/IMG-20260821-WA0014.jpg" alt="" data-image-width="1047" data-image-height="1054">
-                </div>
-              </div>
-              <div class="u-align-justify u-container-style u-layout-cell u-shape-rectangle u-size-32 u-layout-cell-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-                <div class="u-container-layout u-container-layout-2">
-                  <p class="u-align-left u-text u-text-2"> Gestionamos su inversión de manera transparente a través de contratos cerrados que estipulan pagos basados exclusivamente en el avance real de la obra. Este sistema de anticipos y estimaciones garantiza que su proyecto avance sin interrupciones y que cada recurso se destine directamente al terreno.<br>Respaldamos nuestro trabajo con alta ingeniería y plazos de entrega, manteniendo una política financiera firme que prioriza la solidez del servicio y la calidad final sobre las ofertas del mercado masivo.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-align-left u-clearfix u-container-align-left u-container-align-left-lg u-container-align-left-md u-container-align-left-sm u-container-align-left-xl u-image u-section-2" data-image-width="905" data-image-height="770" id="block-1">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1">
-        <div class="u-container-align-center-xs u-container-style u-group u-preserve-proportions u-shading u-shape-circle u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1500">
-          <div class="u-container-layout u-valign-middle-xs u-container-layout-1">
-            <h2 class="u-align-center u-text u-text-body-alt-color u-text-1"> De Sus Ideas a Nuestros Proyectos: Una Muestra de Trayectoria</h2>
-            <p class="u-align-center u-text u-text-2"> Las obras mostradas en esta sección son un compendio resumi​do de​ nuestra experiencia en el terreno, expuesto aquí con fines meramente demostrativos. Detrás de esta galería existe un registro mucho más robusto de proyectos; platíquenos sobre sus planes y con gusto le compartiremos referencias adicionales de trabajos similares al que usted desea realizar.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-palette-1-base u-section-3" id="block-3">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-align-center u-text u-text-body-alt-color u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="0">Algunos tipos de la diversidad de ​obras que hemos ejecutado con éxito en constructora Real Treminio</h2>
-        <div class="u-expanded-width-lg u-expanded-width-xl u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-list-item-1" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h4 class="u-text u-text-2">Instalaciones de cielos rasos residenciales y comerciales</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-1" src="images/Screenshot_20260823_085842_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="719">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-              <div class="u-container-layout u-similar-container u-container-layout-2">
-                <h4 class="u-text u-text-3">Instalaciones de portones, accesos y fachadas</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-2" src="images/Screenshot_20260823_085932_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="718">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-3" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-              <div class="u-container-layout u-similar-container u-container-layout-3">
-                <h4 class="u-text u-text-4">Instalaciones y remodelaciones de exteriores</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-3" src="images/Screenshot_20260823_090006_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="719">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-4" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
-              <div class="u-container-layout u-similar-container u-container-layout-4">
-                <h4 class="u-text u-text-5">Instalaciones de aires acondicionados residencial o comercial</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-4" src="images/Screenshot_20260823_090033_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="719">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-5" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
-              <div class="u-container-layout u-similar-container u-container-layout-5">
-                <h4 class="u-text u-text-6"> Instalaciones y remodelaciones en acabados de madera entre otros</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-5" src="images/Screenshot_20260823_090102_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="719">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-6" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
-              <div class="u-container-layout u-similar-container u-container-layout-6">
-                <h4 class="u-text u-text-7">Instalaciones en redes electricas residenciales y comerciales</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-6" src="images/Screenshot_20260823_090151_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="718">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-7" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000">
-              <div class="u-container-layout u-similar-container u-container-layout-7">
-                <h4 class="u-text u-text-8"> Instalaciones de iluminacion, lamparas, panels entre otros.</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-7" src="images/Screenshot_20260823_090209_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="718">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-8" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000">
-              <div class="u-container-layout u-similar-container u-container-layout-8">
-                <h4 class="u-text u-text-9">Instalaciones de puertas y cortinas metalicas comerciales</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-8" src="images/Screenshot_20260823_090229_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="714">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-9" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000">
-              <div class="u-container-layout u-similar-container u-container-layout-9">
-                <h4 class="u-text u-text-10">instalaciones de techos en lamina y tejados entre otros</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-9" src="images/Screenshot_20260823_090243_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="718">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="custom-expanded u-layout-grid u-list u-list-2">
-          <div class="u-repeater u-repeater-2">
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-10"></div>
-            </div>
-          </div>
-        </div>
-        <div class="u-expanded-width u-list u-list-3">
-          <div class="u-repeater u-repeater-3">
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-list-item-11" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-              <div class="u-container-layout u-similar-container u-container-layout-11">
-                <h4 class="u-align-center-xs u-text u-text-default-sm u-text-default-xs u-text-11">Instalaciones de pisos varios y decks</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-10" src="images/Screenshot_20260823_090321_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="719">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-video-cover u-list-item-12" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-              <div class="u-container-layout u-similar-container u-container-layout-12">
-                <h4 class="u-align-center-xs u-text u-text-default-sm u-text-default-xs u-text-12">Instalaciones de fontaneria y gas LP</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-11" src="images/Screenshot_20260823_090510_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="719">
-              </div>
-            </div>
-            <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-container-style u-list-item u-radius-19 u-repeater-item u-shading u-shape-round u-list-item-13" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-              <div class="u-container-layout u-similar-container u-container-layout-13">
-                <h4 class="u-align-center-xs u-text u-text-default-sm u-text-default-xs u-text-13"> Instalaciones de puertas</h4>
-                <img class="u-expanded-width u-image u-image-round u-preserve-proportions u-radius-20 u-image-12" src="images/Screenshot_20260823_090300_Sketchbook.jpg" alt="" data-image-width="720" data-image-height="718">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-palette-1-base u-valign-top-xl u-section-4" id="block-5">
-      <div class="u-container-align-center-xs u-container-style u-expanded-width u-group u-palette-1-base u-group-1" data-animation-name="flipIn" data-animation-duration="1500" data-animation-direction="X" data-animation-delay="750">
-        <div class="u-container-layout u-valign-top-md u-container-layout-1">
-          <p class="u-align-center u-text u-text-1"> CLÁUSULA EMPRESA CLIENTE: Garantías, Modificaciones y Límites de Responsabilidad</p>
-          <p class="u-align-left u-text u-text-2"> Primera. Garantía Base Legal: La CONSTRUCTORA otorga al CLIENTE la garantía establecida por la ley para la estabilidad y seguridad estructural de la obra por el plazo legal de diez (10) años. Esta garantía aplica siempre y cuando la construcción se ejecute respetando planos, cálculos de ingeniería y usando los materiales de calidad aprobados originalmente.<br>Segunda. Modificaciones y Cambios Tratados de forma presencial: Cualquier cambio, detalle extra o modificación en el diseño, acabados o medidas puede acordarse de forma presencial entre las partes. La palabra del CLIENTE solicitando un cambio tendrá de tal forma total validez y seriedad. Todo cambio solicitado implicará un costo adicional que el CLIENTE aceptara pagar, y causará que la fecha de entrega de la obra se recorra el tiempo que sea necesario para terminar el nuevo trabajo.<br>Tercera. Materiales y Mano de Obra de Bajo Costo Exigidos por el Cliente: Si el CLIENTE pide o exige usar materiales más baratos, marcas genéricas, insumos de baja calidad o meter personal ajeno al equipo de la CONSTRUCTORA para ahorrar dinero, lo hará bajo su propio riesgo y responsabilidad.<br>Cuarta. Pérdida Automática de la Garantía Base: El CLIENTE perderá por completo y de forma inmediata el derecho a reclamar la garantía legal en los siguientes casos:<br>a) Daños, fallas, grietas, filtraciones o problemas derivados del uso de los materiales baratos o mano de obra deficiente que el CLIENTE haya pedido meter.<br>b) Si el CLIENTE o personas ajenas a la empresa meten mano, hacen arreglos o modifican el trabajo sin avisar a la CONSTRUCTORA.<br>
-            <br>En cualquiera de estas situaciones, la CONSTRUCTORA queda libre de toda responsabilidad y no estará obligada a realizar reparaciones ni trabajos de corrección de forma gratuita.
-          </p>
-          <div class="u-list u-list-1">
-            <div class="u-repeater u-repeater-1">
-              <div class="u-align-center u-container-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1" data-animation-direction="Up" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-                <div class="u-container-layout u-similar-container u-valign-middle-xl u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-text-custom-color-3 u-icon-1"><img src="images/88220-5c238690.png" alt=""></span>
-                  <p class="u-text u-text-3">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="https://wa.me/50688057475" title="50688057475">Contacto</a>
-                  </p>
-                </div>
-              </div>
-              <div class="u-align-center u-container-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-href="mailto:Realtreminio@gmail.com" data-target="_blank">
-                <div class="u-container-layout u-similar-container u-valign-middle-xl u-container-layout-3"><span class="u-align-center u-file-icon u-icon u-text-palette-1-base u-icon-2"><img src="images/2669570-b7601297.png" alt=""></span>
-                  <p class="u-text u-text-4">
-                    <a href="mailto:Realtreminio@gmail.com" class="u-active-none u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">Correo ​electrónico</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-palette-1-base u-section-5" id="block-4">
-      <div class="u-clearfix u-sheet u-valign-middle-xl u-valign-top-md u-sheet-1">
-        <div class="custom-expanded data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
-                <div class="u-container-layout u-container-layout-1">
-                  <h2 class="u-text u-text-default u-text-1">Buscanos en<span style="font-style: italic;"></span>
-                  </h2>
-                  <p class="u-text u-text-2"> Síganos en nuestras plataformas digitales para conocer nuestro portafolio de proyectos terminados, ver el avance de nuestras obras en tiempo real y descubrir ideas de diseño para sus espacios. Conéctese con nosotros.</p>
-                  <div class="u-social-icons u-social-icons-1">
-                    <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-7d32"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0px" y="0px" id="svg-7d32"><path d="M75.5,28.8H65.4c-1.5,0-4,0.9-4,4.3v9.4h13.9l-1.5,15.8H61.4v45.1H42.8V58.3h-8.8V42.4h8.8V32.2 c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-palette-1-base u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-a46b"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0px" y="0px" id="svg-a46b"><path d="M92.2,38.2c0,0.8,0,1.6,0,2.3c0,24.3-18.6,52.4-52.6,52.4c-10.6,0.1-20.2-2.9-28.5-8.2 c1.4,0.2,2.9,0.2,4.4,0.2c8.7,0,16.7-2.9,23-7.9c-8.1-0.2-14.9-5.5-17.3-12.8c1.1,0.2,2.4,0.2,3.4,0.2c1.6,0,3.3-0.2,4.8-0.7 c-8.4-1.6-14.9-9.2-14.9-18c0-0.2,0-0.2,0-0.2c2.5,1.4,5.4,2.2,8.4,2.3c-5-3.3-8.3-8.9-8.3-15.4c0-3.4,1-6.5,2.5-9.2 c9.1,11.1,22.7,18.5,38,19.2c-0.2-1.4-0.4-2.8-0.4-4.3c0.1-10,8.3-18.2,18.5-18.2c5.4,0,10.1,2.2,13.5,5.7c4.3-0.8,8.1-2.3,11.7-4.5 c-1.4,4.3-4.3,7.9-8.1,10.1c3.7-0.4,7.3-1.4,10.6-2.9C98.9,32.3,95.7,35.5,92.2,38.2z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-palette-1-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-8341"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0px" y="0px" id="svg-8341"><path d="M55.9,32.9c-12.8,0-23.2,10.4-23.2,23.2s10.4,23.2,23.2,23.2s23.2-10.4,23.2-23.2S68.7,32.9,55.9,32.9z M55.9,69.4c-7.4,0-13.3-6-13.3-13.3c-0.1-7.4,6-13.3,13.3-13.3s13.3,6,13.3,13.3C69.3,63.5,63.3,69.4,55.9,69.4z"></path><path d="M79.7,26.8c-3,0-5.4,2.5-5.4,5.4s2.5,5.4,5.4,5.4c3,0,5.4-2.5,5.4-5.4S82.7,26.8,79.7,26.8z"></path><path d="M78.2,11H33.5C21,11,10.8,21.3,10.8,33.7v44.7c0,12.6,10.2,22.8,22.7,22.8h44.7c12.6,0,22.7-10.2,22.7-22.7 V33.7C100.8,21.1,90.6,11,78.2,11z M91,78.4c0,7.1-5.8,12.8-12.8,12.8H33.5c-7.1,0-12.8-5.8-12.8-12.8V33.7 c0-7.1,5.8-12.8,12.8-12.8h44.7c7.1,0,12.8,5.8,12.8,12.8V78.4z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-icon u-social-linkedin u-text-palette-1-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-8dc3"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0px" y="0px" id="svg-8dc3"><path d="M33.8,96.8H14.5v-58h19.3V96.8z M24.1,30.9L24.1,30.9c-6.6,0-10.8-4.5-10.8-10.1c0-5.8,4.3-10.1,10.9-10.1 S34.9,15,35.1,20.8C35.1,26.4,30.8,30.9,24.1,30.9z M103.3,96.8H84.1v-31c0-7.8-2.7-13.1-9.8-13.1c-5.3,0-8.5,3.6-9.9,7.1 c-0.6,1.3-0.6,3-0.6,4.8V97H44.5c0,0,0.3-52.6,0-58h19.3v8.2c2.6-3.9,7.2-9.6,17.4-9.6c12.7,0,22.2,8.4,22.2,26.1V96.8z"></path></svg></span>
-                    </a>
-                  </div>
-                  <div class="u-align-center-md u-align-center-sm u-align-center-xs u-social-icons u-social-icons-2">
-                    <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/share/1CpitvmWL6/"><span class="u-icon u-social-facebook u-social-icon u-icon-5"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-f47b"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-f47b"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
-c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/constructorarealtreminio?igsi=MXNuYzVsMmh4MDVwaA==
-"><span class="u-icon u-social-icon u-social-instagram u-icon-6"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-c63a"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-c63a"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
-z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
-C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
-c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
-    
-    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-d9e6"><div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1"><span class="u-file-icon u-icon u-text-white"><img src="images/1294391-c0ba6b8b.png" alt=""></span>&nbsp;Constructora Real Treminio
-        </p>
-      </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80"></section>
-  
-</body></html>
+    /* Haz de luz bajo la lupa */
+    .beam {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, transparent 70%);
+      animation: pulseBeam 2s infinite alternate ease-in-out;
+    }
+
+    /* Trayectoria de búsqueda por toda la pantalla */
+    @keyframes searchAnimation {
+      0% {
+        transform: translate(-35vw, -30vh) scale(1);
+      }
+      20% {
+        transform: translate(30vw, -25vh) scale(1.1);
+      }
+      40% {
+        transform: translate(25vw, 25vh) scale(0.95);
+      }
+      60% {
+        transform: translate(-30vw, 20vh) scale(1.05);
+      }
+      80% {
+        transform: translate(0vw, -10vh) scale(1);
+      }
+      100% {
+        transform: translate(-35vw, -30vh) scale(1);
+      }
+    }
+
+    @keyframes pulseBeam {
+      from { opacity: 0.4; transform: scale(0.9); }
+      to { opacity: 0.9; transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+
+  <!-- Mensaje Central -->
+  <div class="message-container">
+    <div class="warning-icon">⚠️</div>
+    <h1 class="title">Service Unavailable</h1>
+    <p class="description">
+      We are sorry, the website you are trying to reach is currently out of service, outdated or no longer exist.
+    </p>
+  </div>
+
+  <!-- Lupa en Búsqueda Continua -->
+  <div class="magnifier-track">
+    <div class="magnifier">
+      <div class="beam"></div>
+      <div class="glass"></div>
+      <div class="handle"></div>
+    </div>
+  </div>
+
+</body>
+</html>
